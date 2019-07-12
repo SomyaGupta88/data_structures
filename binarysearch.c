@@ -1,16 +1,15 @@
 #include<stdio.h>
-void binary_search(int,int,int);
 int main(void)
 {
 	int n,i;
-	Sacnf("%d",n);
+	scanf("%d",&n);
 	int arr[n];
 	for(i=0;i<n;i++)
 	{
-		Scanf(("%d",arr[i]);
+		scanf("%d",&arr[i]);
 	}
 	int ele;
-	Scanf("%d",ele);
+	scanf("%d",&ele);
 	//ele to be searched
 	binary_search(arr,ele,n);
 	return 0;
