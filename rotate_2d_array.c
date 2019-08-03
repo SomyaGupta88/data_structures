@@ -2,7 +2,7 @@
 #define M 4
 #define N 4
 void rotate(int row,int col,int arr[M][N]) {
-	printf("%d %dgg\n",row,col);
+//	printf("%d %dgg\n",row,col);
 	int m=M,n=N;
 	if(row>m || col>n)
 		return;
@@ -11,15 +11,15 @@ void rotate(int row,int col,int arr[M][N]) {
 	int curr=0,prev=0;
 	
 	prev=arr[row+1][col];
-	printf("%d",prev);
+//	printf("%d",prev);
 	for(int i=0;i<n;i++) {
 		curr=arr[row][i];
 		arr[row][i]=prev;
 		prev=curr;
 	}
-	printf("%d %d\n",prev,curr);
+//	printf("%d %d\n",prev,curr);
 	row++;
-	printf("%d rr\n",row);
+//	printf("%d rr\n",row);
 	for(int i=row;i<m;i++) {
 		curr=arr[i][n-1];
 		arr[i][n-1]=prev;
