@@ -1,8 +1,8 @@
 #include <stdio.h>
-#define M 4
-#define N 4
-void rotate(int row,int col,int arr[M][N]) {
-//	printf("%d %dgg\n",row,col);
+#define M 5
+#define N 5
+/*void rotate(int row,int col,int arr[M][N]) {
+	printf("%d %dgg\n",row,col);
 	int m=M,n=N;
 	if(row>m || col>n)
 		return;
@@ -38,11 +38,36 @@ void rotate(int row,int col,int arr[M][N]) {
 		prev=curr;
 	}
 	//printf("%d rrs\n",row);
-	row++;
-	col++;
-	rotate(row,col,arr);
+	rotate(++row,++col,arr);
+}*/
+void rotate(int m,int n,int row,int col,int arr[M][N]) {	
+	if(row>=M/2 || col>=N/2)
+		return;
+	int curr=0,prev=0;
+	
+	prev=arr[row+1][col];
+	for(int i=col;i<n;i++) {
+		curr=arr[row][i];
+		arr[row][i]=prev;
+		prev=curr;
+	}
+	for(int i=row+1;i<m;i++) {
+		curr=arr[i][n-1];
+		arr[i][n-1]=prev;
+		prev=curr;
+	}
+	for(int i=n-2;i>=col;i--) {
+		curr=arr[m-1][i];
+		arr[m-1][i]=prev;
+		prev=curr;
+	}
+	for(int i=m-2;i>row;i--) {
+		curr=arr[i][col];
+		arr[i][col]=prev;
+		prev=curr;
+	}
+	rotate(--m,--n,++row,++col,arr);
 }
-
 
 int main(int agc, char *argv[]) {
 	//int m=atoi(argv[1]);
@@ -56,8 +81,8 @@ int main(int agc, char *argv[]) {
 		}
 	}
 	int rows=0,cols=0;
-
-	rotate(rows,cols,arr);
+	int m=M,n=N;
+	rotate(m,n,rows,cols,arr);
 
 	for(int i=0;i<M;i++) {
 		for(int j=0;j<N;j++) {
