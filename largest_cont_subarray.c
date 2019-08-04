@@ -15,18 +15,18 @@ int main(int argc,char *argv[])
 }
 int largest_sum(int arr[],int n)
 {
-	int x=0,s=0,str=0,end=0,j=0;
+	int sum=0,s=0,str=0,end=0,j=0;
 	for(j=0;j<n;j++)
 	{
-		x=x+arr[j];
-		if(x<0)
+		sum=sum+arr[j];
+		if(sum<0)
 		{
-			x=0;
+			sum=0;
 			str=j+1;
 		}
-		else if(x>s)
+		else if(sum>s)
 		{
-			s=x;
+			s=sum;
 			end=j;
 		}
 	}
