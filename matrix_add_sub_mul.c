@@ -62,12 +62,6 @@ int main(int argc,char *argv[]) {
 				k++;
 		}
 	}
-/*	for(int i=0;i<M;i++){
-		for(int j=0;j<N;j++){
-			printf("%d",arr[i][j]);
-		}
-	}*/
-
 	add(arr,arr1);
 	sub(arr,arr1);
 	mul(arr,arr1);
